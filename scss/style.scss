@@ -45,8 +45,87 @@ body {
   transition:  background-color .3 ease 0s;
 
   &:hover {
-    background-color: rgba(114, 114, 125, 1);
+    background-color: rgba(114, 114, 125, 0.4);
   }
+}
+//======================GLOBAL TEXT=============================
+.header-main {
+  &__title {
+    font-weight: 500;
+    font-size: 51px;
+    line-height: 1.19;
+    color: $white;
+    position: relative;
+  
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #9c9c9c;
+
+    &:not(:last-child) {
+      margin-bottom: 33px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 32px;
+    row-gap: 15px;
+  }
+}
+//===================================MEDIA=============================
+@media (max-width: 991.98px) {
+  .header-main {
+    &__title {
+      font-size: 44px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header-main {
+    &__title {
+      max-width: 520px;
+    }
+    &__text {
+      max-width: 500px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header-main {
+    &__title {
+      font-size: 32px;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+    &__text {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 479.98px) {
+  .header-main {
+   &__actions {
+    flex-direction: column;
+   }
+  }
+}
+
+//================================
+.text {
+  line-height: 1.5;
 }
 //////////////////////////////////////////////////////
 //////////HEADER/////////////
@@ -55,7 +134,8 @@ body {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(13, 13, 17, 0.522);
+  z-index: 50;
+  background-color: rgba(13, 13, 17, 0.7);
 
   &__container {
     display: flex;
@@ -272,6 +352,7 @@ body {
 //=================================================================================================================================
 .main {
   padding-top: 160px;
+  padding-bottom: 100px;
 
   &__container {
     display: flex ;
@@ -280,8 +361,26 @@ body {
 
   &__content {
     flex: 0 1 50%;
+    align-self: center;
   }
 
+  &__text {
+    color: #9c9c9c;
+  }
+    
+  &__header {
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url(../img/decor.svg) 0 0 / 100% no-repeat;
+      width: 122px;
+      height: 122px;
+      position: absolute;
+      top: -20px;
+      left: -29px;
+    }
+  }
 
   &__images {
     flex: 0 1 50%;
@@ -289,22 +388,57 @@ body {
 }
 
 .images-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
+   display: flex;
+   justify-content: center;
+   gap: 9.61%;
 
+   &__column {
+     display: flex;
+     flex-direction: column;
+     gap: 32px;
+    }
+   &__item {
+     overflow: hidden;
+  
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .images-main__img--elipse {
+    border-radius: 50% / 29% ;
+   }
+   
+   .images-main__img--top-corner {
+    border-radius: 50% 0 50% 50%;
+   }
+
+   &__img {
+    border-radius: 50% 50% 0 50%;
+   }
+}
 
 //===============================================================
 @media (max-width: 991.98px) {
   .main {
     padding-top: 120px;
+    padding-bottom: 60px;
   }
   
 }
 
-@media (max-width:767.98) {
+@media (max-width:767.98px) {
   .main {
     padding-top: 100px;
+    padding-bottom: 30px;
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__content {
+      align-self: stretch;
+    }
   }
   
 }
