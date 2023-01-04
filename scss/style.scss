@@ -95,6 +95,30 @@ body {
       margin-bottom: 19px;
      }
   }
+
+  &__list li {
+    position: relative;
+    min-height: 32px;
+    color: #9C9C9C;
+    line-height: 1.5;
+    padding-left: 40px;
+    padding-top: 4px;
+  }
+
+  &__list li:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__list li::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background: rgba(129, 129, 139, 0.1) url(../img/check.svg) center no-repeat;
+  }
 }
 //===================================MEDIA=============================
 @media (max-width: 991.98px) {
@@ -517,6 +541,169 @@ body {
 .services {
   padding-top: 70px;
   padding-bottom: 100px;
+ 
+  &__container {
+    display: flex;
+    gap: 32px;
+  }
+ 
+  &__content {
+    flex: 0 1 50%;
+    align-self: center;
+  }
+
+  &__items {
+    flex: 0 1 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  &__column {
+
+    &:first-child {
+      padding-top: 48px;
+    }
+  }
+}
+.item-service {
+  background: rgba(129, 129, 139, 0.1);
+  border-radius: 30px;
+  padding: 55px 25px;
+ 
+  &__icon {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.42;
+    color: $white;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
+
+//===========================MEDIA FOR SERVICES--------------------------------------------------------------
+@media (max-width: 1100px) {
+  .services {
+    &__container {
+      flex-direction: column;
+    }
+  }
+  .services__header .header-main__title,
+  .services__header .header-main__text {
+    max-width: none;
+  }
+}
+
+
+@media (max-width: 991.98px) {
+  .services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .services {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .services__column {
+      grid-column: 1 / -1;
+    }
+    .services__column:first-child {
+      padding-top: 0px;
+  } 
+}
+//====================================BLOCK WHY US================================================================
+.why {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__container {
+    display: flex;
+    column-gap: 64px;
+    row-gap: 32px;
+  }
+
+  &__images {
+    flex: 0 1 50%;
+  }
+
+ .images-why {
+   display: flex;
+   position: relative;
+   align-self: flex-end;
+
+   &::before {
+    content: "";
+    background: url(../img/decor.svg) 0 0 / 100% no-repeat;
+    width: 122px;
+    height: 122px;
+    position: absolute;
+    left: -10px;
+    bottom: 0px;
+  }
+   
+   &__item {
+    overflow: hidden;
+   }
+
+   &__item img {
+     max-width: 100%;
+   }
+
+   &__item--1 {
+     border-radius: 90% 0 50% 50% / 48% 0 28% 28%;
+   }
+
+   &__item--2 {
+    align-self: flex-end;
+    border-radius: 50% 50% 50% 0;
+   }
+ }
+
+  &__content {
+    flex: 0 1 50%;
+    align-self: center;
+  }
+
+  
+}
+
+
+
+
+//===================================MEDIA FOR WHY US====================================================================
+@media (max-width: 991.98px) {
+  .why {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .why {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__container {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 
