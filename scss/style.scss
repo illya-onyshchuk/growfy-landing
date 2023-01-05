@@ -61,6 +61,13 @@ body {
       margin-bottom: 28px;
     }
   }
+ 
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
   &__text {
     font-size: 18px;
     line-height: 1.5;
@@ -75,6 +82,10 @@ body {
     display: flex;
     column-gap: 32px;
     row-gap: 15px;
+  }
+
+  &__button {
+    align-self: flex-end;
   }
 
   &__label {
@@ -705,6 +716,128 @@ body {
     }
   }
 }
+//====================================================================================================================================
+.advantages {
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+   &__container {
+    display: flex;
+    row-gap: 32px;
+   }
+
+  &__items {
+    flex: 1 1 auto;
+    padding-right: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  &__item {
+    background: rgba(129, 129, 139, 0.1);
+    border-radius: 30px;
+    padding: 40px; 
+  }
+
+  &__value {
+    font-size: 51px; 
+    font-weight: 500;
+    color: $white;
+  }
+
+  &__value:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+ &__text {
+  font-size: 18px;
+  line-height: 1.5;
+ }
+
+  &__image img {
+    max-width: 100%;
+    transform: scale(1.01);
+  }
+
+  &__image {
+    align-self: flex-end;
+    flex: 0 0 38%;
+    overflow: hidden;
+    border-radius: 0% 61% 52% 51%/44% 51%;
+  }
+}
+
+//========================================Media for block Advantages====================================================================
+@media (max-width: 991.98px) {
+  .advantages {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__items {
+      padding-right: 0;
+    }
+
+    &__image {
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .advantages {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .advantages {
+    &__items {
+      grid-template-columns: auto;
+    }
+  }
+ }
+ //======================================BLOCK  testimonials=================================================================================
+.testimonials {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__header {
+    .header-main__title {
+      max-width: none;
+    }
+
+    .header-main__text {
+      max-width: 740px;
+    }
+  }
+}
+//===========================================MEDIA FOR BLOCK TESTIMANIALS===================================================================
+@media (max-width: 991.98px) {
+  .advantages {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .advantages {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+
+
+
+
 
 
 
